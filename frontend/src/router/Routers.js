@@ -4,7 +4,7 @@ import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Tour from '../pages/Tour';
-import TourDetail from '../pages/TourDetail';
+import TourDetail from '../pages/TourDetails';
 import SearchResultList from '../pages/SearchResultList';
 
 

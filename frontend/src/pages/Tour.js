@@ -4,7 +4,7 @@ class Tour extends Component {
     render() {
         return (
             <div>
-                
+                Tour
             </div>
         );
     }
