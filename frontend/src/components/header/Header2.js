@@ -17,8 +17,7 @@ const nav__links=[
         display:'Tours'
     }
 ]
-const Header = () => {
-    /*
+const Header2 = () => {
     const headerRef = useRef(null);
     const stickyHeaderfunc = () => {
         window.addEventListener('scroll', () => {
@@ -33,9 +32,9 @@ const Header = () => {
         stickyHeaderfunc();
         return window.removeEventListener('scroll', stickyHeaderfunc);
     });
-    */
+    
     return (
-        <header className="header" >
+        <header className="header">
         <Container>
             <Row>
                 <div className= "nav__wrapper d-flex align-items-center justify-content-between">
@@ -77,4 +76,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Header2;
