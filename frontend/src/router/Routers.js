@@ -6,6 +6,7 @@ import Register from '../pages/Register';
 import Tour from '../pages/Tour';
 import TourDetail from '../pages/TourDetails';
 import SearchResultList from '../pages/SearchResultList';
+import ThankYou from '../pages/ThankYou';
 
 
 class Routers extends Component {
@@ -19,7 +20,7 @@ class Routers extends Component {
                 <Route path="/tours" element={<Tour />} />
                 <Route path="/tours/:id" element={<TourDetail />} />
                 <Route path="/tours/search" element={< SearchResultList />} />
-
+                <Route path='thank-you' element={<ThankYou/>}/>
             </Routes>
         );
     }
