@@ -74,9 +74,13 @@ export const login = async (req, res) => {
       const isCorrectPassword = await bcrypt.compare(password, user.password);
       console.log(isCorrectPassword)
       if(isCorrectPassword){
-        return res
-          .status(200)
-          .json({ success: true, succes: { message: 'succesfully login' } });
+        const {password, role, ...rest} = user._doc
+
+        //create token jwt
+        const token = jwt.sign({is: user._ide, role: user.role}, process.env.JWT_SECRET_KEY, {expiresIn: '15d'})
+
+        //set token in the browser cookies and send the response to the client
+        res.cookie('accesToken', token, {httpOnly:true,expires:token.expiresIn}).status(200).json({ token, success: true, succes: { message: 'succesfully login' }, data:{...rest} });
       }else{
         return res.status(500).json({ success: false, error: { message: 'usuario o contraseña incorrecto' } });
       }

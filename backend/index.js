@@ -11,7 +11,10 @@ import authRoute from './routes/auth.js'
 dotenv.config()
 const app = express()
 const port = process.env.PORT || 8000
-
+const corsOptions = {
+    origin:true, 
+    credentials:true
+}
 
 // testing
 //app.get('/' , (req,res)=>{
@@ -34,7 +37,7 @@ const connect  = async()=>{
 //middleware
 
 app.use(express.json())
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(cookieParser())
 app.use('/tours', tourRoute)
 app.use('/users', userRoute)
